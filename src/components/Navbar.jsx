@@ -26,7 +26,7 @@ const Navbar = () => {
 
       <button
         onClick={handleLogout}
-        className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors focus-visible focus-visible:ring-2 focus-visible:ring-ring"
+        className="bg-black text-primary-foreground px-4 py-2 rounded-md hover:bg-black/90 transition-colors  focus-visible:ring-2 focus-visible:ring-ring"
       >
         Logout
       </button>

@@ -116,7 +116,7 @@ export default function UsersPage() {
 
         <button
           onClick={() => setOpenCreateModal(true)}
-          className="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90 transition-colors focus-visible focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-2"
+          className="bg-black text-primary-foreground px-6 py-2 rounded-md hover:bg-black/90 transition-colors focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-2"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

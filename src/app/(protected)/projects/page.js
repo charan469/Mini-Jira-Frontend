@@ -136,7 +136,7 @@ const ProjectsPage = () => {
         {can(PERMISSIONS.PROJECT_CREATE) && (
           <button
             onClick={() => setShowForm(true)}
-            className="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90 transition-colors focus-visible focus-visible:ring-2 focus-visible:ring-ring"
+            className="bg-black text-primary-foreground px-6 py-2 rounded-md hover:bg-black/90 transition-colors  focus-visible:ring-2 focus-visible:ring-ring"
           >
             Create Project
           </button>
