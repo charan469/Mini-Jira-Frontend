@@ -50,6 +50,7 @@ export default function AssignRoleModal({
           fullWidth
           value={selectedRole}
           onChange={(e) => setSelectedRole(e.target.value)}
+          disabled={availableRoles.length === 0}
         >
           {availableRoles.map((role) => (
             <MenuItem key={role.id} value={role.id}>
@@ -57,6 +58,12 @@ export default function AssignRoleModal({
             </MenuItem>
           ))}
         </Select>
+
+        {availableRoles.length === 0 && (
+          <div className="mt-4 text-sm text-gray-600">
+            This user already has every available role.
+          </div>
+        )}
       </DialogContent>
 
       <DialogActions>
@@ -64,6 +71,7 @@ export default function AssignRoleModal({
         <Button
           variant="contained"
           onClick={handleSubmit}
+          disabled={!selectedRole || availableRoles.length === 0}
         >
           Assign
         </Button>

@@ -21,12 +21,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-4 bg-white shadow">
-      <h1 className="text-xl font-semibold">Task Traker</h1>
+    <div className="flex items-center justify-between px-6 py-4 bg-card border-b border-border shadow-sm">
+      <h1 className="text-xl font-semibold text-foreground">Task Tracker</h1>
 
       <button
         onClick={handleLogout}
-        className="bg-black text-white px-4 py-2 rounded hover:opacity-90"
+        className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors focus-visible focus-visible:ring-2 focus-visible:ring-ring"
       >
         Logout
       </button>

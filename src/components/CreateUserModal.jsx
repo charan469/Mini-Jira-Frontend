@@ -29,10 +29,15 @@ export default function CreateUserModal({
   });
 
   const [selectedRoles, setSelectedRoles] = useState([]);
+  const [formError, setFormError] = useState("");
 
   const handleSubmit = () => {
-    if (!form.auth_provider || !form.provider_user_id) return;
+    if (!form.full_name || !form.email || !form.auth_provider || !form.provider_user_id) {
+      setFormError("Please fill out all fields before creating a user.");
+      return;
+    }
 
+    setFormError("");
     onCreate(form, selectedRoles);
 
     setForm({
@@ -124,11 +129,26 @@ export default function CreateUserModal({
             />
           ))}
         </Stack>
+
+        {formError && (
+          <Typography color="error" variant="body2" mt={1}>
+            {formError}
+          </Typography>
+        )}
       </DialogContent>
 
       <DialogActions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button variant="contained" onClick={handleSubmit}>
+        <Button
+          variant="contained"
+          onClick={handleSubmit}
+          disabled={
+            !form.full_name ||
+            !form.email ||
+            !form.auth_provider ||
+            !form.provider_user_id
+          }
+        >
           Create
         </Button>
       </DialogActions>

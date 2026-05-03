@@ -1,5 +1,8 @@
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Task Tracker",
@@ -9,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${inter.className} antialiased`}>
         <ClerkProvider
           signInFallbackRedirectUrl="/sso-callback"
           signUpFallbackRedirectUrl="/sso-callback"
