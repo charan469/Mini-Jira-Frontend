@@ -113,7 +113,7 @@ export default function UsersPage() {
           <h1 className="text-4xl font-bold text-foreground">Users</h1>
           <p className="text-muted-foreground">Manage user accounts and roles</p>
         </div>
-
+{/* 
         <button
           onClick={() => setOpenCreateModal(true)}
           className="bg-black text-primary-foreground px-6 py-2 rounded-md hover:bg-black/90 transition-colors focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-2"
@@ -122,7 +122,7 @@ export default function UsersPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
           Create User
-        </button>
+        </button> */}
       </div>
 
       <div className="bg-card rounded-lg border border-border overflow-hidden">
