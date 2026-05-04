@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { SignInButton, useUser } from "@clerk/nextjs";
 
 export default function LoginPage() {
   const router = useRouter();
   const { user, isLoaded } = useUser();
+
+  const redirectUrl = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return `${window.location.origin}/sso-callback`;
+    }
+    return "/sso-callback";
+  }, []);
 
   useEffect(() => {
     if (isLoaded && user) {
@@ -29,7 +36,11 @@ export default function LoginPage() {
           Task Tracker Login
         </h1>
 
-        <SignInButton mode="redirect" forceRedirectUrl="/sso-callback">
+        <SignInButton
+          mode="redirect"
+          forceRedirectUrl={redirectUrl}
+          fallbackRedirectUrl={redirectUrl}
+        >
           <button className="w-full bg-black text-white py-3 rounded">
             Login with SSO
           </button>

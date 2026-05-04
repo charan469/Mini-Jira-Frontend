@@ -18,6 +18,9 @@ export default function RootLayout({ children }) {
           signInFallbackRedirectUrl="/sso-callback"
           signUpForceRedirectUrl="/sso-callback"
           signUpFallbackRedirectUrl="/sso-callback"
+           publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+  afterSignInUrl="/sso-callback"
+  afterSignUpUrl="/sso-callback"
         >
           {children}
         </ClerkProvider>
