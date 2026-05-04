@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <ClerkProvider
+          signInForceRedirectUrl="/sso-callback"
           signInFallbackRedirectUrl="/sso-callback"
+          signUpForceRedirectUrl="/sso-callback"
           signUpFallbackRedirectUrl="/sso-callback"
         >
           {children}

@@ -29,7 +29,7 @@ export default function LoginPage() {
           Task Tracker Login
         </h1>
 
-        <SignInButton mode="redirect">
+        <SignInButton mode="redirect" forceRedirectUrl="/sso-callback">
           <button className="w-full bg-black text-white py-3 rounded">
             Login with SSO
           </button>
